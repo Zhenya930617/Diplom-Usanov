@@ -27,7 +27,8 @@ showSlides (slideIndex);
 
     const slides2 = document.querySelectorAll('.i-need'),
     prev2 = document.querySelector('.tc-button-prev'),
-    next2 = document.querySelector('.tc-button-next');
+    next2 = document.querySelector('.tc-button-next'),
+    current = document.querySelector('.testi-number');
     let slideIndex2 = 1;
 
 function showSlides2(n){
@@ -39,6 +40,11 @@ function showSlides2(n){
     }
 slides2.forEach(item => item.style.display = 'none');
 slides2[slideIndex2 - 1].style.display = 'block';
+if (slides2.length < 10) {
+    current.textContent = `0${slideIndex2}.`;
+} else{
+    current.textContent = `${slideIndex2}.`;
+}
 }
 showSlides2 (slideIndex2);
 
